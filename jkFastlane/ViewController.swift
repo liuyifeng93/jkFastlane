@@ -12,7 +12,11 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        let data: [String: Any] = ["a": 1, "b": "Two"]
+        if let jsonData = try?JSONSerialization.data(withJSONObject: data, options: .prettyPrinted), let jsonString = NSString.init(data: jsonData, encoding: String.Encoding.utf8.rawValue) as? String {
+            let s = String.init(jsonString)
+            print(jsonString)
+        }
     }
 
 
