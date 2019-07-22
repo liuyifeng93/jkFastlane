@@ -1,0 +1,36 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "development version"
+  lane :development do |options|
+  	# tagName = options[:tag]
+  	# git_pull(only_tags: true) 
+  	# git_add(path: ".")
+  	# git_commit(path: ".", message: "Version Bump")
+  	# push_to_git_remote
+  	# add_git_tag(tag: tagName)
+  	# push_git_tags
+    build_app(
+		scheme: "jkFastlane",
+		export_method: "development",
+		output_directory: "/Users/yuangong/Desktop/jsFastlane",
+		output_name: "development",
+		configuration: "Debug"
+	)
+  end
+end
